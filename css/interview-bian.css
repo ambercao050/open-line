@@ -1,0 +1,395 @@
+/* 01. Global variables */
+:root{
+	/*font size*/
+	--size-020: .1rem;
+	--size-040: .222rem;
+	--size-080: .444rem;
+    --size-090: .667rem;
+    --size-100: 1rem;  
+	--size-150: 1.25rem;       
+    --size-200: 1.5rem;
+    --size-300: 2.25rem;
+    --size-400: 3.375rem;
+    --size-500: 5.063rem;
+    --size-600: 7.594rem;
+    --size-700: 11.391rem;
+
+	/*space*/
+	--space-050: 0.2rem;
+	--space-100: 0.5rem;
+  	--space-200: 1rem;
+  	--space-300: 1.5rem;
+  	--space-400: 2.25rem;
+  	--space-500: 3.375rem;
+	--space-800: 5.375rem;
+
+	/*color*/
+	--text: #000000;
+	--bg:white;
+	--accent:#0D00ff;
+
+	body.dark-mode {
+		--text: white;
+		--bg: black;
+		--accent: #0D00ff;
+	}
+
+	/*margin*/
+	--margin-outside:.5rem;
+	--margin-bottom: 3rem;
+
+	/*vertical lines*/
+	--sidebar-width: 5vw;
+ 	--rule-width: 1px;
+}
+
+/* 02. Mobile Base flow */
+header {
+	font-family: "slight-chance", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.site-nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: var(--space-100)
+}
+
+article {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-300);
+}
+
+.article-text,
+.article-media,
+.interview__body {
+  display: contents;
+}
+
+.article-media img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/* 03. Header & Navigation */
+.site-identity {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	
+	text-align: center;
+	text-decoration: none;
+	color: var(--text);
+	font-size: var(--size-300);
+	padding: var(--space-50);
+	
+}
+.site-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-300);
+
+  padding: var(--space-100);
+  margin: 0;
+  list-style: none;
+}
+.site-nav li{
+    border: var(--text) 1px solid;
+}
+.site-nav a{
+    display: block;
+    font-size: var(--size-200);
+    text-decoration: none;
+    padding-left: var(--size-080);
+    padding-right: var(--size-080);
+}
+/* 04. Site Identity */
+.site-identity__text {
+	font-family: "slight-chance", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+/* 05. Article */
+main {
+	margin-left: var(--space-200);
+	margin-right: var(--space-200);
+}
+.interview__header {
+	margin-top: var(--space-200);
+	margin-bottom: var(--space-800);
+}
+.interview__header--main {
+	font-size: var(--size-500);
+	line-height: 90%;
+}
+.interview__header--sub {
+	padding-top: var(--space-50);
+	font-size: var(--size-400);
+	line-height: 90%;
+}
+.interview__body {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-500);
+}
+
+.interview__question {
+	font-size: var(--size-200);
+	line-height: 120%;
+	font-family: "ibm-plex-sans", sans-serif;
+	font-weight: 700;
+	font-style: italic;
+	margin-bottom: var(--size-100);
+}
+.interview__bodytext {
+	font-size: var(--size-100);
+	line-height: 150%;
+	font-family: "ibm-plex-sans", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+/* 06. Typography */
+/* 07. Media */
+figcaption {
+	font-family: "slight-chance", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	padding-top: var(--space-100);
+	padding-left: var(--space-100);
+	font-size: var(--size-100);
+	line-height: 90%;
+}
+blockquote {
+	font-family: "slight-chance", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	padding-top: var(--space-100);
+	padding-left: var(--space-100);
+	font-size: var(--size-300);
+	line-height: 100%;
+}
+/* 08. Footer */
+footer {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+	column-gap: var(--space-100);
+	row-gap: var(--space-100);
+	
+	font-family: "slight-chance", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	padding-top: var(--space-100);
+	
+	font-size: var(--size-100);
+	line-height: 90%;
+	padding-left: var(--space-200);
+	padding-right: var(--space-200);
+	margin-top: var(--space-500);
+	border-top: 1px solid var(--text);
+}
+footer a{
+	text-decoration: none;
+	white-space: nowrap;
+}
+.footer--left,
+.footer--right {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-100);
+}
+.footer--right {
+  text-align: right;
+  align-items: flex-end;
+}
+.footer__bottom {
+	text-align: right;
+	grid-column: 1/-1;
+	white-space: nowrap;
+	
+}
+.footer__identity {
+	
+	font-size: var(--size-150);
+	font-family: "ibm-plex-sans", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	letter-spacing: -0.03em;
+	line-height: 80%;
+}
+/* 09. Tablet overrides */
+@media (min-width: 700px) {
+}
+
+/* 10. Desktop overrides */
+@media (min-width: 1000px) {
+
+  body {
+    display: grid;
+    grid-template-columns: 5% minmax(0, 1fr);
+  }
+
+  .site-identity {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .page-content {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+  }
+
+}
+
+@media (min-width: 1000px) {
+
+  .site-identity {
+    position: sticky;
+    top: 0;
+    align-self: start;
+
+    height: 100vh;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding-bottom: var(--space-300);
+    border-right: 1px solid var(--text);
+  }
+
+  .site-identity__text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    white-space: nowrap;
+  }
+
+}
+
+@media (min-width: 1000px) {
+
+  .page-content > header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    padding-top: var(--space-300);
+    padding-bottom: var(--space-300);
+  }
+
+  .site-nav {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-200);
+  }
+
+}
+@media (min-width: 1000px) {
+	.interview__section {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+		gap: 0;
+		align-items: start;
+	}
+
+	.interview__group {
+		min-width: 0;
+		padding-right: var(--space-200);
+		margin: 0;
+
+	}
+	
+	.article-media {
+		min-width: 0;
+		padding: 0;
+		margin: 0;
+		border-left: 1px solid var(--text);
+	}
+
+	.interview__body {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-100);
+	}
+	.interview__image {
+		margin: 0;
+	}
+	.interview__image img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	.interview__header,
+	.interview__group,
+	.interview__image,
+	.article-media blockquote {
+		grid-row: auto;
+	}
+
+	.interview__group {
+		padding-left: 0;
+		padding-bottom: var(--space-500);
+	}
+
+	.blockquote {
+		padding-top: var(--space-200);
+	}
+	.interview__header--main {
+		font-size: var(--size-600);
+		line-height: 90%;
+		letter-spacing: -0.05rem;
+
+	}
+	.interview__header--sub {
+		padding-top: var(--space-50);
+		font-size: var(--size-400);
+		line-height: 90%;
+	}
+}
+
+@media (min-width: 1000px) {
+	.interview__group,
+	.article-media {
+		position: sticky;
+		top: 0;
+		align-self: start;
+		min-width: 0;
+	}
+
+	.interview__image {
+		position: static;
+	}
+}
+
+
+/*hover*/
+.site-nav li:hover {
+	color: var(--bg);
+	background-color: var(--accent);
+	border-color: #0D00ff;
+	border-radius: 999px;
+}
+
+.site-identity:hover {
+	color: var(--bg);
+	background-color: var(--accent);
+}
+
+footer a:hover {
+	color: var(--accent);
+}
+
+/*dark mode*/
+@media (prefers-color-scheme: dark) {
+	:root {
+		--text: var(--accent);
+		--bg: black;
+	}
+}

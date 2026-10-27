@@ -1,0 +1,208 @@
+/* 01. Global variables */
+:root{
+	/*font size*/
+	--size-020: .1rem;
+	--size-040: .222rem;
+	--size-080: .444rem;
+    --size-090: .667rem;
+    --size-100: 1rem;  
+	--size-150: 1.25rem;       
+    --size-200: 1.5rem;
+    --size-300: 2.25rem;
+    --size-400: 3.375rem;
+    --size-500: 5.063rem;
+    --size-600: 7.594rem;
+    --size-700: 11.391rem;
+
+	/*space*/
+	--space-050: 0.2rem;
+	--space-100: 0.5rem;
+  	--space-200: 1rem;
+  	--space-300: 1.5rem;
+  	--space-400: 2.25rem;
+  	--space-500: 3.375rem;
+	--space-800: 5.375rem;
+
+	/*color*/
+	--text: #000000;
+	--bg:white;
+	--accent:#0D00ff;
+
+	
+
+	/*margin*/
+	--margin-outside:.5rem;
+	--margin-bottom: 3rem;
+
+	/*vertical lines*/
+	--sidebar-width: 5vw;
+ 	--rule-width: 1px;
+}
+
+/* 02. header */
+header {
+	font-family: "slight-chance", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.landing-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-300);
+
+  padding-top: var(--space-200);
+  margin: 0;
+  list-style: none;
+}
+.landing-nav li{
+    border: var(--text) 1px solid;
+}
+.landing-nav a{
+    display: block;
+	color: var(--text);
+    font-size: var(--size-200);
+    text-decoration: none;
+    padding-left: var(--size-080);
+    padding-right: var(--size-080);
+}
+
+/* 03. index */
+.site-identity {
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	font-size: clamp(2rem, 25.5vw, 30rem);
+	line-height: 0.9;
+	text-align: center;
+	letter-spacing: -0.3rem;
+	white-space: nowrap;
+	padding-right: var(--space-200);
+}
+
+.site-identity__text {
+	font-family: "slight-chance", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+.interview-index {
+	margin-top: 10rem;
+	border-top: 1px solid var(--text);
+}
+.interview-row {
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	border-bottom: 1px solid var(--text);
+	text-decoration: none;
+	transition: transform 0.6s ease;
+}
+.interview-row__content {
+	display: flex;
+	align-items: center;
+	gap: var(--space-200);
+}
+.interview-row__thumbnail {
+	display: block;
+	height: var(--size-400);
+	width: auto;
+	flex-shrink: 0;
+}
+.interview-row__title {
+	padding: 0;
+	font-size: clamp(2rem, 8vw, 5rem);
+	line-height: 120%;
+	font-family: "ibm-plex-sans", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	letter-spacing: -0.03em;
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+/* 04. Footer */
+footer {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+	column-gap: var(--space-100);
+	row-gap: var(--space-100);
+	
+	font-family: "slight-chance", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	padding-top: var(--space-100);
+	
+	font-size: var(--size-100);
+	line-height: 90%;
+	padding-left: var(--space-200);
+	padding-right: var(--space-200);
+	margin-top: var(--space-500);
+	border-top: 1px solid var(--text);
+}
+footer a{
+	text-decoration: none;
+	white-space: nowrap;
+}
+.footer--left,
+.footer--right {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-100);
+}
+.footer--right {
+  text-align: right;
+  align-items: flex-end;
+}
+.footer__bottom {
+	text-align: right;
+	grid-column: 1/-1;
+	white-space: nowrap;
+	
+}
+.footer__identity {
+	
+	font-size: var(--size-150);
+	font-family: "ibm-plex-sans", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	letter-spacing: -0.03em;
+	line-height: 80%;
+}
+
+/*desk view*/
+@media (min-width: 1000px) {
+	.interview-row__thumbnail {
+		height: var(--size-500);
+	}	
+}
+
+/*hover*/
+.landing-nav li:hover {
+	color: var(--bg);
+	background-color: var(--accent);
+	border-color: #0D00ff;
+	border-radius: 999px;
+}
+
+footer a:hover {
+	color: var(--accent);
+}
+
+.interview-index a:hover {
+	background-color: var(--accent);
+}
+
+@keyframes move-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.interview-row:hover .interview-row__content {
+  animation: move-left 9s linear infinite alternate;
+}
